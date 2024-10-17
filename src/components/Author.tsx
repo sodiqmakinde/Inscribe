@@ -1,13 +1,12 @@
 import Image from "next/image";
-// import Sodiq from "@/design/images/"
 
 interface AuthorsProps {
   title: string;
   name: string;
-  image?: string;
+  // image?: string;
 }
 
-const Author = ({ title, name, image }: AuthorsProps) => {
+const Author = ({ title, name }: AuthorsProps) => {
   return (
     <div className="flex items-center">
       <Image

@@ -5,7 +5,6 @@ export const Inscribe = ({
   width = 121,
   height = 24,
   responsive = false,
-  fill = "#060644",
 }: SvgProps) => {
   const svgAttributes = responsive ? {} : { width, height };
 

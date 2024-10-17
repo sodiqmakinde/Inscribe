@@ -18,7 +18,7 @@ const EachBlog = ({
   blogthumbnail,
 }: EachBlogComponent) => {
   return (
-    <div className="grid gap-2 items-center grid-cols-[65%_35%] justify-between border-borderColor border-b border-b-1 py-6">
+    <div className="grid gap-2 fade-in-bottom  items-center grid-cols-[65%_35%] justify-between border-borderColor border-b border-b-1 py-6">
       <div className="mr-4">
         <Author title={authortitle} name={authorName} />
         <h1 className="font-medium text-2xl mt-5 max-[768px]:mt-3 max-[768px]:text-xl">

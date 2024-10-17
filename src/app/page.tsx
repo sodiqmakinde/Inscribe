@@ -1,8 +1,6 @@
 import AllBlog from "@/components/AllBlog";
 import Aside from "@/components/Aside";
-import Author from "@/components/Author";
 import Navbar from "@/components/Navbar";
-import Image from "next/image";
 
 export default function Home() {
   return (
