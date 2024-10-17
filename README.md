@@ -3,7 +3,7 @@
 
 This repository contains the codebase for **Inscribe**, a platform for sharing and discovering articles in the tech and freelance world. The project is built using **Next.js** for server-side rendering and routing, **TypeScript** for type safety, **ShadCN** for component libraries and utilities, and **Tailwind CSS** for styling.
 
-![Thumbnail](https://github.com/ElliotWood13/imlearning-frontend/blob/main/src/images/thumb.png?raw=true)
+![Thumbnail](https://github.com/sodiqmakinde/Inscribe/blob/main/src/design/images/inscribe%20Home.png?raw=true)
 
 ## Tech Stack
 
