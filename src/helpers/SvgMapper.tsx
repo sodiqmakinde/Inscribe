@@ -16,7 +16,7 @@ interface SvgMapperProps {
   fill?: string;
   className?: string;
 }
-
+/* eslint-disable @typescript-eslint/no-explicit-any */
 interface SvgCatalogue {
   [key: string]: any;
 }
