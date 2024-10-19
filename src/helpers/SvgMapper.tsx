@@ -16,6 +16,7 @@ interface SvgMapperProps {
   fill?: string;
   className?: string;
 }
+
 /* eslint-disable @typescript-eslint/no-explicit-any */
 interface SvgCatalogue {
   [key: string]: any;
@@ -24,6 +25,8 @@ interface SvgCatalogue {
 const svgs: SvgCatalogue = {
   logo: Inscribe,
   search: Search,
+  clap: Clap,
+  comment: Comment,
 };
 
 const Svg = ({ type, ...rest }: SvgMapperProps) => {

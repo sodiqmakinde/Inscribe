@@ -17,8 +17,10 @@ const Author = ({ title, name }: AuthorsProps) => {
         alt={name}
       />
       <div>
-        <h2 className="text-lg font-medium">{name}</h2>
-        <p className="text-sm font-normal text-fadeWhite">{title}</p>
+        <h2 className="text-lg max-[760px]:text-[16px] font-medium">{name}</h2>
+        <p className="text-sm  max-[760px]:text-[14px]  font-normal text-fadeWhite">
+          {title}
+        </p>
       </div>
     </div>
   );
