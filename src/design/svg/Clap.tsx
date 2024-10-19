@@ -2,7 +2,7 @@ import { SvgProps } from "@/helpers/SvgMapper";
 
 export const Clap = ({
   className,
-  width = 121,
+  width = 24,
   height = 24,
   responsive = false,
 }: SvgProps) => {

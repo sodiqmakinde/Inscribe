@@ -1,4 +1,5 @@
 import { Clap } from "@/design/svg/Clap";
+import { Comment } from "@/design/svg/Comment";
 import { Inscribe } from "@/design/svg/Inscribe";
 import { Search } from "@/design/svg/Search";
 import { StaticImageData } from "next/image";

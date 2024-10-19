@@ -1,6 +1,7 @@
 import React from "react";
 import Author from "./Author";
 import Image from "next/image";
+import Svg from "@/helpers/SvgMapper";
 
 interface EachBlogComponent {
   authortitle: string;
@@ -30,10 +31,16 @@ const EachBlog = ({
           </p>
         )}
         <div>
-          <ul>
-            <li>May 4, 2024</li>
-            <li></li>
-            <li>May 4, 2024</li>
+          <ul className="flex mt-4 max-w-[200px] justify-between items-center">
+            <li className="text-fadeWhite text-sm font-extralight ">May 4</li>
+            <li className="flex">
+              <Svg type="clap" />
+              <span className="ml-2 text-sm text-fadeWhite">4K</span>
+            </li>
+            <li className="flex items-center">
+              <Svg type="comment" />
+              <span className="ml-2 text-sm text-fadeWhite">4K</span>
+            </li>
           </ul>
         </div>
       </div>
