@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Author from "./Author";
 import Image from "next/image";
 import Svg from "@/helpers/SvgMapper";
@@ -10,30 +10,27 @@ interface EachBlogComponent {
   blogdescription?: string;
   blogthumbnail?: string;
   headshot?: string;
-  date: { seconds: number; nanoseconds: number }; 
-  clicks: number; 
-  comments: number; 
+  date: { seconds: number; nanoseconds: number };
+  clicks: number;
+  comments: number;
 }
 
 const formatDate = (timestamp: { seconds: number; nanoseconds: number }) => {
-  const date = new Date(timestamp.seconds * 1000); 
-
+  const date = new Date(timestamp.seconds * 1000);
 
   const options: Intl.DateTimeFormatOptions = {
     day: "2-digit",
-    month: "short", // This will give you "Oct"
-    // year: "numeric",
+    month: "short",
   };
 
-  return date.toLocaleString("en-GB", options).replace(",", ""); 
+  return date.toLocaleString("en-GB", options).replace(",", "");
 };
-
 
 const formatNumber = (number: number) => {
   if (number >= 1000) {
-    return `${(number / 1000).toFixed(1)}K`; 
+    return `${(number / 1000).toFixed(1)}K`;
   }
-  return number.toString(); 
+  return number.toString();
 };
 
 const EachBlog = ({
@@ -44,9 +41,15 @@ const EachBlog = ({
   blogthumbnail,
   headshot,
   date,
-  clicks, 
+  clicks,
   comments,
 }: EachBlogComponent) => {
+  const [isClapped, setIsClapped] = useState(false);
+
+  const handleClapClick = () => {
+    setIsClapped(!isClapped);
+  };
+
   return (
     <div className="grid gap-2 border-borderColor border-b border-b-1 fade-in-bottom items-center grid-cols-[65%_35%] justify-between py-6">
       <div className="mr-4">
@@ -70,13 +73,23 @@ const EachBlog = ({
             <li className="text-fadeWhite text-sm font-extralight ">
               {formatDate(date)}
             </li>
-            <li className="flex">
-              <Svg type="clap" />
-              <span className="ml-2 text-sm text-fadeWhite">
-                {formatNumber(clicks)} 
-              </span>
-            </li>
             <li className="flex items-center">
+              <div
+                className={`flex cursor-pointer items-center ${
+                  isClapped ? "shake" : ""
+                }`}
+                onClick={handleClapClick}
+              >
+                <Svg
+                  type="clap"
+                  fill={isClapped ? "#EC4849" : "var(--primary)"}
+                />
+                <span className="ml-2 text-sm text-fadeWhite">
+                  {formatNumber(clicks)}
+                </span>
+              </div>
+            </li>
+            <li className="flex cursor-pointer items-center">
               <Svg type="comment" />
               <span className="ml-2 text-sm text-fadeWhite">
                 {formatNumber(comments)}
