@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import Author from "./Author";
 import Image from "next/image";
 import Svg from "@/helpers/SvgMapper";
+import Link from "next/link";
+import parse from "html-react-parser";
 
 interface EachBlogComponent {
   authortitle: string;
@@ -10,6 +12,7 @@ interface EachBlogComponent {
   blogdescription?: string;
   blogthumbnail?: string;
   headshot?: string;
+  blogslug: string;
   date: { seconds: number; nanoseconds: number };
   clicks: number;
   comments: number;
@@ -40,6 +43,7 @@ const EachBlog = ({
   blogdescription,
   blogthumbnail,
   headshot,
+  blogslug,
   date,
   clicks,
   comments,
@@ -58,13 +62,18 @@ const EachBlog = ({
           title={authortitle}
           name={authorName}
         />
-        <h1 className="font-medium text-2xl mt-5 max-[768px]:mt-3 max-[768px]:text-xl">
-          {blogtitle}
-        </h1>
+
+        <Link href={blogslug}>
+          <h1 className="font-medium text-2xl mt-5 max-[768px]:mt-3 max-[768px]:text-xl">
+            {blogtitle}
+          </h1>
+        </Link>
         {blogdescription && (
           <p className="mt-2 max-[768px]:text-sm max-[768px]:overflow-hidden max-[768px]:h-[55px]">
-            {blogdescription.split(" ").slice(0, 30).join(" ") +
-              (blogdescription.split(" ").length > 150 ? "..." : "")}
+            {parse(
+              blogdescription.split(" ").slice(0, 30).join(" ") +
+                (blogdescription.split(" ").length > 150 ? "..." : "")
+            )}
           </p>
         )}
 

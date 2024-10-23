@@ -31,6 +31,7 @@ const AllBlog = () => {
     <section className="">
       {blogs.map((blog) => (
         <EachBlog
+          blogslug={blog.slug}
           clicks={blog.likes}
           comments={blog.comments}
           date={blog.date}
