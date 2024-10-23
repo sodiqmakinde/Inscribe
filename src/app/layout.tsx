@@ -15,8 +15,8 @@ import "@/design/styles/globals.scss";
 // });
 
 export const metadata: Metadata = {
-  title: "Sodiq Makinde",
-  description: "Book a session with Sodiq Makinde",
+  title: "Inscribe",
+  description: "A better way yo read blogs",
 };
 
 export default function RootLayout({
