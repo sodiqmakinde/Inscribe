@@ -4,7 +4,7 @@ export type BlogPost = {
   thumbnail: string;
   slug: string;
   content: string;
-  comment: number;
+  comments: number;
   date: { seconds: number; nanoseconds: number };
   likes: number;
   views?: number;
