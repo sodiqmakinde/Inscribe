@@ -33,7 +33,7 @@ const AllBlog = () => {
         <EachBlog
           blogslug={blog.slug}
           clicks={blog.likes}
-          comments={blog.comments}
+          comments={blog.comment}
           date={blog.date}
           key={blog.id}
           headshot={blog.author.imageUrl}
