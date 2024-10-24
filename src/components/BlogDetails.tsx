@@ -3,6 +3,8 @@ import React from "react";
 import { BlogPost } from "@/interface/types";
 import parse from "html-react-parser";
 import DetailsHeader from "./DetailsHeader";
+import Navbar from "./Navbar";
+import Footer from "./Footer";
 
 type BlogDetailProps = {
   blog: BlogPost;
@@ -24,8 +26,9 @@ const BlogDetail = ({ blog }: BlogDetailProps) => {
   const cleanedContent = cleanImageTags(blog.content.replace(/\\n/g, "\n"));
 
   return (
-    <section className="bg-white">
-      <div className="container">
+    <section className="container bg-white">
+      <Navbar />
+      <div className="">
         <main className="pt-8 pb-16 lg:pt-16 lg:pb-24">
           <DetailsHeader
             thumbnail={blog.thumbnail}
@@ -37,13 +40,12 @@ const BlogDetail = ({ blog }: BlogDetailProps) => {
 
           <div className="flex justify-between mx-auto max-w-screen-xl">
             <article className="mx-auto w-full max-w-2xl format format-sm sm:format-base lg:format-lg format-blue dark:format-invert">
-              <div className="preMadeMarkdown">
-                {parse(cleanedContent)}
-              </div>
+              <div className="preMadeMarkdown">{parse(cleanedContent)}</div>
             </article>
           </div>
         </main>
       </div>
+      <Footer />
     </section>
   );
 };

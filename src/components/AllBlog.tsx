@@ -4,6 +4,7 @@ import EachBlog from "./EachBlog";
 import { useQuery } from "@tanstack/react-query";
 import { getBlogs } from "@/services/getBlog";
 import Loader from "./Loader";
+// import Navbar from "./Navbar";
 
 const AllBlog = () => {
   const {
