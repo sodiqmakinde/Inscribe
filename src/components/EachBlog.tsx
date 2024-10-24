@@ -29,7 +29,11 @@ const formatDate = (timestamp: { seconds: number; nanoseconds: number }) => {
   return date.toLocaleString("en-GB", options).replace(",", "");
 };
 
-const formatNumber = (number: number) => {
+const formatNumber = (number: number | undefined) => {
+  if (number === undefined || number === null) {
+    return "0";
+  }
+
   if (number >= 1000) {
     return `${(number / 1000).toFixed(1)}K`;
   }
@@ -56,6 +60,7 @@ const EachBlog = ({
 
   return (
     <div className="grid gap-2 border-borderColor border-b border-b-1 fade-in-bottom items-center grid-cols-[65%_35%] justify-between py-6">
+     
       <div className="mr-4">
         <Author
           authorheadshot={headshot}

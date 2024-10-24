@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Author from "./Author";
 
 const DEFAULT_IMAGE_URL =
@@ -6,12 +7,14 @@ const DEFAULT_IMAGE_URL =
 type DetailsHeaderProps = {
   title: string;
   authorName?: string;
+  thumbnail?: string;
   authorThumbnail?: string;
   authorPosition?: string;
 };
 
 const DetailsHeader = ({
   title,
+  thumbnail,
   authorName = "External Resources",
   authorThumbnail = DEFAULT_IMAGE_URL,
   authorPosition = "Content Writer",
@@ -25,11 +28,20 @@ const DetailsHeader = ({
             title={authorPosition}
             authorheadshot={authorThumbnail}
           />
-          
-          <h1 className=" mt-5 text-2xl font-semibold text-gray-900 lg:text-4xl">
+
+          <h1 className=" mt-5 mb-5 text-2xl font-semibold text-gray-900 lg:text-4xl">
             {title}
           </h1>
-      
+          {thumbnail && (
+            <Image
+              quality={100}
+              src={thumbnail}
+              alt={title}
+              className="w-full h-[300px] rounded-md  max-[768px]:h-[180px] object-cover"
+              width={346}
+              height={216}
+            />
+          )}
         </header>
       </article>
     </div>

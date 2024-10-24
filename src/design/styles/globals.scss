@@ -93,9 +93,16 @@ body {
 // ==============
 .preMadeMarkdown {
   h2 {
-    margin-top: 10px;
+    margin-top: 25px;
+    margin-bottom: 0 !important;
     font-size: 30px;
-    font-weight: 500 !important;
+    
+        line-height: 28px;
+    font-weight: 600 !important;
+           @media (max-width: 540px) {
+      font-size: 26px;
+      line-height: 28px;
+    }
   }
   // h1{
   //   margin-top: 20px !important;
@@ -104,11 +111,19 @@ body {
     margin-top: 20px;
     font-size: 25px;
     font-weight: 400 !important;
+       @media (max-width: 540px) {
+     font-size: 22px;
+      line-height: 28px;
+    }
   }
   h4 {
     font-size: 22px;
     font-weight: inherit;
     margin-top: 20px;
+    @media (max-width: 540px) {
+      font-size: 20px;
+      line-height: 28px;
+    }
   }
   p {
     font-size: 18px;
@@ -116,6 +131,10 @@ body {
     font-weight: 400 !important;
     margin-top: 10px;
     line-height: 30px;
+    @media (max-width: 540px) {
+      font-size: 16px;
+      line-height: 28px;
+    }
   }
   a {
     color: var(--foreground);
@@ -146,15 +165,15 @@ code {
   line-height: 1.5;
 }
 pre {
-    display: block;
-    unicode-bidi: embed;
-    font-family: monospace;
-    white-space: pre;
+  display: block;
+  unicode-bidi: embed;
+  font-family: monospace;
+  white-space: pre;
 }
 pre {
   background-color: #2d2d2d;
   color: #ccc;
-  padding: 16px;
+  padding: 10px;
   border-radius: 8px;
   overflow: auto;
   margin: 16px 0;
@@ -164,6 +183,35 @@ pre {
 pre code {
   display: block;
   white-space: pre-wrap;
+  word-wrap: break-word;
+}
+pre code {
+  display: block;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  background-color: #f5f5f5;
+  border-radius: 5px;
+  font-family: monospace;
+}
+
+pre {
+  position: relative;
+}
+
+.copy-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 3px 10px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.copy-btn:hover {
+  background: #0056b3;
 }
 
 code {
